@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Github from "./assets/github.png";
-import Linkedin from './assets/linkedin-logo.png'
-import Twitter from './assets/twitter.png'
+import Linkedin from "./assets/linkedin-logo.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 const linkedinLink = 'https://www.linkedin.com/in/oluwatobi-adepoju-4a242898/';
 const githubLink = 'https://github.com/adepoju-oluwatobi';
@@ -16,25 +16,111 @@ function App() {
     fontFamily: "Skranji, cursive",
   };
 
+  // Initial loading state
+  const [isLoading, setIsLoading] = useState(true);
+  // Initial greetings in different languages
+  const greetings = [
+    "Hello",
+    "Hola",
+    "Bonjour",
+    "Ciao",
+    "Konnichiwa",
+    "你好(nǐ hǎo)"
+  ];
+  // Index to keep track of the currently displayed greeting
+  const [greetingIndex, setGreetingIndex] = useState(0);
+
+  useEffect(() => {
+    // Function to cycle through greetings while loading
+    const cycleGreetings = () => {
+      setGreetingIndex((prevIndex) =>
+        prevIndex === greetings.length - 1 ? 0 : prevIndex + 1
+      );
+    };
+
+    // Start cycling greetings at an interval
+    const intervalId = setInterval(cycleGreetings, 500);
+
+    // Simulate loading for a few seconds (you can replace this with actual data fetching)
+    setTimeout(() => {
+      setIsLoading(false);
+      clearInterval(intervalId); // Stop cycling greetings
+    }, 3000);
+
+    // Cleanup the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div style={backgroundGradient}>
       <Header />
-      <section className="text-white flex flex-col justify-center items-center gap-2 h-[70vh]">
-        <p className="text-[#bebebe] ml-[-150px]">I AM</p>
-        <h1 className="font-bold text-[44px]" style={fontFamily}>
-          OLUWATOBI
-        </h1>
-        <p className="text-[#bebebe] ml-[50px]">A FRONTEND DEVELOPER</p>
+      <section className="text-white flex flex-col justify-center items-center gap-2 md:gap-0 h-[70vh]">
+        <AnimatePresence>
+          {isLoading ? (
+            <motion.p
+              key={greetings[greetingIndex]}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              className="font-bold text-[32px]"
+              style={fontFamily}
+            >
+              {greetings[greetingIndex]}
+            </motion.p>
+          ) : (
+            <>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                className="text-[#bebebe] ml-[-150px] md:ml-[-250px] font-thin"
+              >
+                I AM
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                className="font-bold text-[44px] md:text-[120px]"
+                style={fontFamily}
+              >
+                OLUWATOBI
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                className="text-[#bebebe] ml-[50px] md:ml-[250px] font-thin"
+              >
+                A FRONTEND DEVELOPER
+              </motion.p>
+            </>
+          )}
+        </AnimatePresence>
       </section>
 
       <section className="flex flex-col gap-8 ml-6">
-        <a href={githubLink} target="_blank">
-        <img className="w-5" src={Github} alt="" />
-        </a>
+        <motion.a
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+        >
+          <img className="w-5" src={Github} alt="GitHub" />
+        </motion.a>
 
-       <a href={linkedinLink} target="_blank">
-       <img className="w-5" src={Linkedin} alt="" />
-       </a>
+        <motion.a
+          href={linkedinLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+        >
+          <img className="w-5" src={Linkedin} alt="LinkedIn" />
+        </motion.a>
       </section>
     </div>
   );
