@@ -143,7 +143,7 @@ function ProjectCard() {
         ))}
       </div>
       <ScrollDots activeIndex={activeIndex} onClickDot={handleDotClick} />
-      <section className="flex md:flex-col gap-5 mt-8 md:gap-8 md:mt-[5%] ml-10 mb-4">
+      <section className="flex md:flex-col gap-5 mt-[5%] md:gap-8 md:mt-[5%] ml-10 mb-4">
         <motion.a
           href={githubLink}
           target="_blank"
