@@ -64,6 +64,7 @@ function App() {
               exit={{ opacity: 0, y: 20 }}
               className="font-bold text-[32px]"
               style={fontFamily}
+              transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
             >
               {greetings[greetingIndex]}
             </motion.p>
@@ -74,6 +75,7 @@ function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 className="text-[#bebebe] ml-[-150px] md:ml-[-250px] font-thin"
+                transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
               >
                 I AM
               </motion.p>
@@ -83,6 +85,7 @@ function App() {
                 exit={{ opacity: 0, y: 20 }}
                 className="font-bold text-[44px] md:text-[120px]"
                 style={fontFamily}
+                transition={{ duration: 1.5, ease: "easeInOut" }} // Adjust the duration and easing here
               >
                 OLUWATOBI
               </motion.h1>
@@ -91,6 +94,7 @@ function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 className="text-[#bebebe] ml-[50px] md:ml-[250px] font-thin"
+                transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
               >
                 A FRONTEND DEVELOPER
               </motion.p>
@@ -107,6 +111,7 @@ function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
         >
           <img className="w-5" src={Github} alt="GitHub" />
         </motion.a>
@@ -118,6 +123,7 @@ function App() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
+          transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
         >
           <img className="w-5" src={Linkedin} alt="LinkedIn" />
         </motion.a>
