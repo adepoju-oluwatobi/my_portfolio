@@ -120,7 +120,7 @@ function ProjectCard() {
       <style>{scrollbarStyle}</style>
       <Header />
       <div
-        className="project-container mt-10 text-white "
+        className="project-container mt-5 md:mt-10 text-white "
         style={projectContainer}
       >
         {projects.map((project, index) => (
