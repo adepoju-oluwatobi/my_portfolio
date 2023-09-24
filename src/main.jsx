@@ -7,7 +7,6 @@ import {
 import "./index.css";
 import App from "./App";
 import Projects from "./pages/Projects";
-import HorizontalImageScroll from "./components/HorizontalImageScroll";
 
 const router = createBrowserRouter([
   {
@@ -18,10 +17,6 @@ const router = createBrowserRouter([
     path: "/projects",
     element: <Projects />
   },
-  {
-    path: "/scroll",
-    element: <HorizontalImageScroll />
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

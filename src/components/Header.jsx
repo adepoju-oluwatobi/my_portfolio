@@ -33,7 +33,7 @@ function Header() {
   };
 
   return (
-    <header className='bg-[#131313] bg-opacity-40 text-[#d6d6d6] flex items-center justify-between p-6'>
+    <header className='bg-[#131313] bg-opacity-20 text-[#d6d6d6] flex items-center justify-between p-6'>
       <Link to = "/">
       <div>
         {/* Apply motion to add the hover effect to the logo */}
