@@ -39,13 +39,13 @@ function App() {
     };
 
     // Start cycling greetings at an interval
-    const intervalId = setInterval(cycleGreetings, 500);
+    const intervalId = setInterval(cycleGreetings, 1000);
 
     // Simulate loading for a few seconds (you can replace this with actual data fetching)
     setTimeout(() => {
       setIsLoading(false);
       clearInterval(intervalId); // Stop cycling greetings
-    }, 3000);
+    }, 6000);
 
     // Cleanup the interval when the component unmounts
     return () => clearInterval(intervalId);
@@ -85,7 +85,7 @@ function App() {
                 exit={{ opacity: 0, y: 20 }}
                 className="font-bold text-[44px] md:text-[120px]"
                 style={fontFamily}
-                transition={{ duration: 1.5, ease: "easeInOut" }} // Adjust the duration and easing here
+                transition={{ duration: 2, ease: "easeInOut" }} // Adjust the duration and easing here
               >
                 OLUWATOBI
               </motion.h1>
@@ -104,30 +104,33 @@ function App() {
       </section>
 
       <section className="flex flex-col gap-8 ml-6">
-        <motion.a
-          href={githubLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
-        >
-          <img className="w-5" src={Github} alt="GitHub" />
-        </motion.a>
+  <motion.a
+    href={githubLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 20 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    className="hover:scale-110" // Add the hover effect here
+  >
+    <img className="w-5" src={Github} alt="GitHub" />
+  </motion.a>
 
-        <motion.a
-          href={linkedinLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
-        >
-          <img className="w-5" src={Linkedin} alt="LinkedIn" />
-        </motion.a>
-      </section>
+  <motion.a
+    href={linkedinLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 20 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    className="hover:scale-110" // Add the hover effect here
+  >
+    <img className="w-5" src={Linkedin} alt="LinkedIn" />
+  </motion.a>
+</section>
+
     </div>
   );
 }

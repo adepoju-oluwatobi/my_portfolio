@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // Import motion from Framer Motion
 import Logo from '../assets/cpu.svg';
+import { Link } from 'react-router-dom';
 
 function Header() {
   // Define hover animation variants for the logo
@@ -32,7 +33,8 @@ function Header() {
   };
 
   return (
-    <header className='bg-[#131313] bg-opacity-10 text-[#d6d6d6] flex items-center justify-between p-6'>
+    <header className='bg-[#131313] bg-opacity-40 text-[#d6d6d6] flex items-center justify-between p-6'>
+      <Link to = "/">
       <div>
         {/* Apply motion to add the hover effect to the logo */}
         <motion.img
@@ -44,9 +46,11 @@ function Header() {
           initial='initial'
         />
       </div>
+      </Link>
       <nav className='flex gap-6'>
         {/* Apply motion to add the hover effect to the navigation items */}
-        <motion.p
+       <Link to = "/projects">
+       <motion.p
           className='cursor-pointer'
           variants={itemVariants} // Apply the animation variants
           whileHover='hover' // Trigger animation on hover
@@ -54,6 +58,7 @@ function Header() {
         >
           Projects
         </motion.p>
+       </Link>
         <motion.p
           className='cursor-pointer'
           variants={itemVariants} // Apply the animation variants
