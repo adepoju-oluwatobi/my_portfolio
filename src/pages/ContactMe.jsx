@@ -11,10 +11,8 @@ function ContactMe() {
   };
   return (
     <div style={backgroundGradient}>
-     <div className="">
      <Header />
-     </div>
-      <main className="text-white py-4 px-8 text-center md:text-left mt-[10%]">
+      <main className="text-white py-4 px-8 text-center md:text-left pt-[30%]">
         <section>
           <div>
             <p style={fontFamily} className="font-bold text-5xl text-[#d6d6d6]">
