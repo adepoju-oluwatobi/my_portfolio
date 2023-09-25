@@ -35,7 +35,7 @@ function ContactMe() {
       >
         <Header />
         <motion.main
-          className="text-white py-4 px-8 text-center pt-[30%] md:pt-[8%] flex flex-col md:flex-row md:h-[90vh] md:justify-center md:items-center w-[90%]  m-auto gap-20"
+          className="text-white py-4 px-8 text-center pt-[30%] md:pt-[8%] flex flex-col md:flex-row md:h-[100vh] md:justify-center md:items-center w-[90%]  m-auto gap-20"
           variants={containerVariants}
         >
           <section className="md:w-[50%]">

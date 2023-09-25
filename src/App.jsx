@@ -54,7 +54,7 @@ function App() {
   return (
     <div style={backgroundGradient}>
       <Header />
-      <section className="text-white flex flex-col justify-center items-center gap-2 md:gap-0 h-[80vh]">
+      <section className="text-white flex flex-col justify-center items-center gap-2 md:gap-0 h-[90vh]">
         <AnimatePresence>
           {isLoading ? (
             <motion.p
