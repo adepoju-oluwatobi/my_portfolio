@@ -103,7 +103,7 @@ function App() {
         </AnimatePresence>
       </section>
 
-      <section className="flex flex-col mt-[-30%] md:mt-[-10%] gap-8 ml-6">
+      <section className="flex flex-col mt-[-15%] md:mt-[-3%] gap-8 ml-6">
   <motion.a
     href={githubLink}
     target="_blank"
