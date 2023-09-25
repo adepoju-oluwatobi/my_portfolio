@@ -54,7 +54,7 @@ function App() {
   return (
     <div style={backgroundGradient}>
       <Header />
-      <section className="text-white flex flex-col justify-center items-center gap-2 md:gap-0 h-[70vh]">
+      <section className="text-white flex flex-col justify-center items-center gap-2 md:gap-0 h-[100vh]">
         <AnimatePresence>
           {isLoading ? (
             <motion.p
@@ -103,7 +103,7 @@ function App() {
         </AnimatePresence>
       </section>
 
-      <section className="flex flex-col gap-8 ml-6">
+      <section className="flex flex-col mt-[-30%] md:mt-[-10%] gap-8 ml-6">
   <motion.a
     href={githubLink}
     target="_blank"

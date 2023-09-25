@@ -83,7 +83,7 @@ function ProjectCard() {
 
   const projectCard = {
     flex: "0 0 auto", // Allow project cards to have their own width
-    margin: "0 10px", // Add margin between project cards
+    margin: "0 20px", // Add margin between project cards
     background: "#131313",
     borderRadius: "30px",
   };
@@ -114,17 +114,67 @@ function ProjectCard() {
     backgroundColor: "blue", // Active dot color
   };
 
+  // Define animation variants
+  const projectCardVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  const linkVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+    exit: {
+      opacity: 0,
+      y: 20,
+    },
+  };
+
+  // Define animation variants for the image
+  const imageVariants = {
+    hover: {
+      scale: 1.1, // Increase scale on hover (adjust as needed)
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div style={{ ...backgroundGradient, overflow: "hidden" }}>
       {/* Apply the scrollbarStyle CSS */}
       <style>{scrollbarStyle}</style>
       <Header />
       <div
-        className="project-container mt-5 md:mt-10 text-white "
+        className="project-container mt-[25%] md:mt-[10%] text-white "
         style={projectContainer}
       >
         {projects.map((project, index) => (
-          <div key={index} className="project-card cursor-pointer" style={projectCard}>
+          <motion.div
+          // Wrap the image with a motion.div for animations
+          whileHover="hover" // Apply the hover animation
+          variants={imageVariants}
+        >
+          <motion.div
+            key={index}
+            className="project-card cursor-pointer"
+            style={projectCard}
+            initial="hidden"
+            animate="visible"
+            variants={projectCardVariants}
+          >
             <div className="w-[300px]">
               <img src={project.image} alt={project.name} />
               <div className="p-4">
@@ -139,19 +189,20 @@ function ProjectCard() {
                 {/* <img src={project.stack[1]} alt="" /> */}
               </div>
             </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
       <ScrollDots activeIndex={activeIndex} onClickDot={handleDotClick} />
-      <section className="flex md:flex-col gap-5 mt-[5%] md:gap-8 md:mt-[5%] ml-10 mb-4">
+      <section className="flex md:flex-col gap-5 mt-[5%] md:gap-8 md:mt-[-1%] ml-10 mb-4">
         <motion.a
           href={githubLink}
           target="_blank"
           rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={linkVariants}
           className="hover:scale-110" // Add the hover effect here
         >
           <img className="w-5" src={Github} alt="GitHub" />
@@ -161,10 +212,10 @@ function ProjectCard() {
           href={linkedinLink}
           target="_blank"
           rel="noopener noreferrer"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={linkVariants}
           className="hover:scale-110" // Add the hover effect here
         >
           <img className="w-5" src={Linkedin} alt="LinkedIn" />
@@ -173,5 +224,15 @@ function ProjectCard() {
     </div>
   );
 }
+
+const inputStyles = {
+  backgroundColor: "transparent",
+  borderBottomWidth: "0.1em",
+  padding: "0.5rem",
+  borderColor: "#d6d6d6",
+  borderRadius: 0,
+  outline: "none",
+  transition: "border-color 0.3s ease",
+};
 
 export default ProjectCard;
