@@ -127,10 +127,11 @@ function ProjectCard() {
     },
   };
 
+  const isMobile = window.innerWidth <= 768; // Adjust the breakpoint as needed
   // Define animation variants for the image
   const imageVariants = {
     hover: {
-      scale: 1.1, // Increase scale on hover (adjust as needed)
+      scale: isMobile ? 1 : 1.1, // Apply the hover effect only on non-mobile devices
       transition: {
         duration: 0.3,
         ease: "easeInOut",
@@ -148,11 +149,11 @@ function ProjectCard() {
         style={projectContainer}
       >
         {projects.map((project, index) => (
-          <motion.div
-          // Wrap the image with a motion.div for animations
-          whileHover="hover" // Apply the hover animation
-          variants={imageVariants}
-        >
+         <motion.div
+         // Wrap the image with a motion.div for animations
+         whileHover={isMobile ? undefined : "hover"} // Apply the hover animation conditionally
+         variants={imageVariants}
+       >
           <motion.div
             key={index}
             className="project-card cursor-pointer"
