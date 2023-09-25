@@ -59,6 +59,7 @@ function Header() {
           Projects
         </motion.p>
        </Link>
+        <Link to = "/contact-me">
         <motion.p
           className='cursor-pointer'
           variants={itemVariants} // Apply the animation variants
@@ -67,6 +68,7 @@ function Header() {
         >
           Contact Me
         </motion.p>
+        </Link>
       </nav>
     </header>
   );
