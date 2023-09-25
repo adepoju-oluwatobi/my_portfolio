@@ -15,34 +15,20 @@ const projects = [
     image: "/movie_app.png",
     vite: "/vite.svg",
     react: "/react.svg",
-    link: "",
+    link: "https://zuri-stage-two.vercel.app/",
   },
   {
     name: "Fashion Store",
     description: `An Ecommerce website developed to sharpen my 
       skill on API fetching and ecommerce development.`,
     image: "/shoe_store.png",
+    link: "https://shoe-store-livid.vercel.app/"
   },
   {
     name: "Intro Section",
     description: "A challenge by frontend mentor",
     image: "/intro_section.png",
-  },
-  {
-    name: "Movie Box",
-    description: "An internship project from HNG. API fetched from TMDB.",
-    image: "/movie_app.png",
-  },
-  {
-    name: "Fashion Store",
-    description: `An Ecommerce website developed to sharpen my 
-      skill on API fetching and ecommerce development.`,
-    image: "/shoe_store.png",
-  },
-  {
-    name: "Intro Section",
-    description: "A challenge by frontend mentor",
-    image: "/intro_section.png",
+    link: "https://intro-section-with-dropdown-navigation-ruby.vercel.app/"
   },
   // Add more project objects here if needed
 ];
@@ -175,7 +161,8 @@ function ProjectCard() {
             animate="visible"
             variants={projectCardVariants}
           >
-            <div className="w-[300px]">
+           <a href={project.link} target="_blank">
+           <div className="w-[300px]">
               <img src={project.image} alt={project.name} />
               <div className="p-4">
                 <h3 className="font-bold" style={fontFamily}>
@@ -189,6 +176,7 @@ function ProjectCard() {
                 {/* <img src={project.stack[1]} alt="" /> */}
               </div>
             </div>
+           </a>
             </motion.div>
           </motion.div>
         ))}
