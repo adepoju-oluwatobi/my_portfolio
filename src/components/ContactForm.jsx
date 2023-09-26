@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion"; // Import motion from Framer Motion
+import { motion } from "framer-motion";
 import SendMsg from "../assets/send.svg";
 
 function ContactForm() {
@@ -19,8 +19,8 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add logic to handle form submission, e.g., sending data to a server
-    console.log(formData); // You can replace this with your submission logic
+    // Add logic to handle form submission
+    console.log(formData);
   };
 
   return (

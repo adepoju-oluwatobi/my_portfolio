@@ -41,7 +41,7 @@ function App() {
     // Start cycling greetings at an interval
     const intervalId = setInterval(cycleGreetings, 1000);
 
-    // Simulate loading for a few seconds (you can replace this with actual data fetching)
+    // Simulate loading for a few seconds
     setTimeout(() => {
       setIsLoading(false);
       clearInterval(intervalId); // Stop cycling greetings
@@ -64,7 +64,7 @@ function App() {
               exit={{ opacity: 0, y: 20 }}
               className="font-bold text-[32px]"
               style={fontFamily}
-              transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
+              transition={{ duration: 1, ease: "easeOut" }}
             >
               {greetings[greetingIndex]}
             </motion.p>
@@ -75,7 +75,7 @@ function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 className="text-[#bebebe] ml-[-150px] md:ml-[-250px] font-thin"
-                transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
+                transition={{ duration: 1, ease: "easeOut" }}
               >
                 I AM
               </motion.p>
@@ -85,7 +85,7 @@ function App() {
                 exit={{ opacity: 0, y: 20 }}
                 className="font-bold text-[44px] md:text-[120px]"
                 style={fontFamily}
-                transition={{ duration: 2, ease: "easeInOut" }} // Adjust the duration and easing here
+                transition={{ duration: 2, ease: "easeInOut" }} // Adjust the duration and easing
               >
                 OLUWATOBI
               </motion.h1>
@@ -94,7 +94,7 @@ function App() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 className="text-[#bebebe] ml-[50px] md:ml-[250px] font-thin"
-                transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing here
+                transition={{ duration: 1, ease: "easeOut" }} // Adjust the duration and easing
               >
                 A FRONTEND DEVELOPER
               </motion.p>
@@ -112,7 +112,7 @@ function App() {
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 1, ease: "easeOut" }}
-    className="hover:scale-110" // Add the hover effect here
+    className="hover:scale-110"
   >
     <img className="w-5" src={Github} alt="GitHub" />
   </motion.a>
@@ -125,7 +125,7 @@ function App() {
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 1, ease: "easeOut" }}
-    className="hover:scale-110" // Add the hover effect here
+    className="hover:scale-110"
   >
     <img className="w-5" src={Linkedin} alt="LinkedIn" />
   </motion.a>

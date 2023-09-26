@@ -39,7 +39,7 @@ function Header() {
         left: 0,
         right: 0,
         zIndex: 999,
-        backdropFilter: 'blur(5px)', // Apply the blur effect
+        backdropFilter: 'blur(5px)', //the blur effect
         WebkitBackdropFilter: 'blur(10px)', // For compatibility with Safari
       }}
     >

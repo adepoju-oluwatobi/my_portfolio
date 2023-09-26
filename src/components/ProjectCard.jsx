@@ -60,8 +60,6 @@ const projects = [
     image: "/portfolio.png",
     link: "https://my-portfolio-vite-coral.vercel.app//"
   },
-
-  // Add more project objects here if needed
 ];
 
 function ScrollDots({ activeIndex, onClickDot }) {
@@ -90,7 +88,7 @@ function ProjectCard() {
   };
 
   const projectContainer = {
-    width: "100%", // Adjust the width as needed
+    width: "100%",
     display: "flex",
     padding: "20px",
     overflowX: "auto", // Enable horizontal scrolling
@@ -107,7 +105,7 @@ function ProjectCard() {
 
   const handleDotClick = (index) => {
     setActiveIndex(index);
-    // Scroll to the selected project card (You can implement this using scrollIntoView)
+    // Scroll to the selected project card
   };
 
   // CSS for hiding the scrollbar
@@ -223,7 +221,7 @@ function ProjectCard() {
           animate="visible"
           exit="exit"
           variants={linkVariants}
-          className="hover:scale-110" // Add the hover effect here
+          className="hover:scale-110"
         >
           <img className="w-5" src={Github} alt="GitHub" />
         </motion.a>
@@ -236,7 +234,7 @@ function ProjectCard() {
           animate="visible"
           exit="exit"
           variants={linkVariants}
-          className="hover:scale-110" // Add the hover effect here
+          className="hover:scale-110"
         >
           <img className="w-5" src={Linkedin} alt="LinkedIn" />
         </motion.a>
