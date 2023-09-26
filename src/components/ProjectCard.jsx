@@ -30,6 +30,37 @@ const projects = [
     image: "/intro_section.png",
     link: "https://intro-section-with-dropdown-navigation-ruby.vercel.app/"
   },
+  {
+    name: "Honeyland Coperative Website",
+    description: "This is a portal for Honeyland cooperative society that is integated with mongodb, node js and express. The backend was handled by a backend developer",
+    image: "/honeyland.png",
+    link: "https://honeyland-cooperative-portal.vercel.app/"
+  },
+  {
+    name: "Patricia Clone",
+    description: "A Clone of the patricia website",
+    image: "/patricia.png",
+    link: "https://patricia-clone.vercel.app/"
+  },
+  {
+    name: "Rating Component",
+    description: "A challenge by frontend mentor to build  component for rating",
+    image: "/ratings.png",
+    link: "https://06-interactive-rating-component.vercel.app/"
+  },
+  {
+    name: "Card Component",
+    description: "A challenge by frontend mentor to polish my skill on css flexbox",
+    image: "/four-card.png",
+    link: "https://four-card-feature-section-beta-pink.vercel.app//"
+  },
+  {
+    name: "My Portfolio Website",
+    description: "One of the portfolio website I developed during the course of learning javascript",
+    image: "/portfolio.png",
+    link: "https://my-portfolio-vite-coral.vercel.app//"
+  },
+
   // Add more project objects here if needed
 ];
 
@@ -69,7 +100,7 @@ function ProjectCard() {
 
   const projectCard = {
     flex: "0 0 auto", // Allow project cards to have their own width
-    margin: "0 20px", // Add margin between project cards
+    margin: "0 15px", // Add margin between project cards
     background: "#131313",
     borderRadius: "30px",
   };
