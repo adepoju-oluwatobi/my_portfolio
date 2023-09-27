@@ -15,120 +15,95 @@ const projects = [
     image: "/movie_app.png",
     vite: "/vite.svg",
     react: "/react.svg",
+    tailwind: "/tailwind.png",
     link: "https://zuri-stage-two.vercel.app/",
+    libraries: [
+      "axios",
+      "react-router",
+      "react-slick",
+      "slick-carousel",
+      "react-youtube",
+    ],
   },
   {
     name: "Fashion Store",
     description: `An Ecommerce website developed to sharpen my 
       skill on API fetching and ecommerce development.`,
     image: "/shoe_store.png",
-    link: "https://shoe-store-livid.vercel.app/"
+    link: "https://shoe-store-livid.vercel.app/",
+    vite: "/vite.svg",
+    react: "/react.svg",
+    tailwind: "/tailwind.png",
   },
   {
     name: "Intro Section",
     description: "A challenge by frontend mentor",
     image: "/intro_section.png",
-    link: "https://intro-section-with-dropdown-navigation-ruby.vercel.app/"
+    link: "https://intro-section-with-dropdown-navigation-ruby.vercel.app/",
+    vite: "/vite.svg",
+    react: "/react.svg",
+    tailwind: "/tailwind.png",
   },
   {
     name: "Honeyland Coperative Website",
-    description: "This is a portal for Honeyland cooperative society that is integated with mongodb, node js and express. The backend was handled by a backend developer",
+    description:
+      "This is a portal for Honeyland cooperative society that is integated with mongodb, node js and express. The backend was handled by a backend developer",
     image: "/honeyland.png",
-    link: "https://honeyland-cooperative-portal.vercel.app/"
+    link: "https://honeyland-cooperative-portal.vercel.app/",
+    vite: "/vite.svg",
+    react: "/react.svg",
+    tailwind: "/tailwind.png",
   },
   {
     name: "Patricia Clone",
     description: "A Clone of the patricia website",
     image: "/patricia.png",
-    link: "https://patricia-clone.vercel.app/"
+    link: "https://patricia-clone.vercel.app/",
+    vite: "/vite.svg",
+    react: "/react.svg",
+    tailwind: "/tailwind.png",
   },
   {
     name: "Rating Component",
-    description: "A challenge by frontend mentor to build  component for rating",
+    description:
+      "A challenge by frontend mentor to build  component for rating",
     image: "/ratings.png",
-    link: "https://06-interactive-rating-component.vercel.app/"
+    link: "https://06-interactive-rating-component.vercel.app/",
+    vite: "/vite.svg",
+    react: "/react.svg",
+    tailwind: "/tailwind.png",
   },
   {
     name: "Card Component",
-    description: "A challenge by frontend mentor to polish my skill on css flexbox",
+    description:
+      "A challenge by frontend mentor to polish my skill on css flexbox",
     image: "/four-card.png",
-    link: "https://four-card-feature-section-beta-pink.vercel.app//"
+    link: "https://four-card-feature-section-beta-pink.vercel.app/",
+    vite: "/vite.svg",
+    react: "/react.svg",
+    tailwind: "/tailwind.png",
   },
   {
     name: "My Portfolio Website",
-    description: "One of the portfolio website I developed during the course of learning javascript",
+    description:
+      "One of the portfolio website I developed during the course of learning javascript",
     image: "/portfolio.png",
-    link: "https://my-portfolio-vite-coral.vercel.app//"
+    link: "https://my-portfolio-vite-coral.vercel.app/",
+    vite: "/vite.svg",
+    react: "/react.svg",
+    tailwind: "/tailwind.png",
   },
 ];
-
-function ScrollDots({ activeIndex, onClickDot }) {
-  return (
-    <div className="scroll-dots">
-      {projects.map((_, index) => (
-        <span
-          key={index}
-          className={`scroll-dot ${activeIndex === index ? "active" : ""}`}
-          onClick={() => onClickDot(index)}
-        />
-      ))}
-    </div>
-  );
-}
-
 function ProjectCard() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const backgroundGradient = {
     background: `radial-gradient(circle at center top, #292929 0%, #101010 50%)`,
-    height: "100vh",
+    height: "auto",
   };
   const fontFamily = {
     fontFamily: "Skranji, cursive",
   };
-
-  const projectContainer = {
-    width: "100%",
-    display: "flex",
-    padding: "20px",
-    overflowX: "auto", // Enable horizontal scrolling
-    scrollbarWidth: "none", // Firefox
-    WebkitOverflowScrolling: "touch", // iOS
-  };
-
-  const projectCard = {
-    flex: "0 0 auto", // Allow project cards to have their own width
-    margin: "0 15px", // Add margin between project cards
-    background: "#131313",
-    borderRadius: "30px",
-  };
-
-  const handleDotClick = (index) => {
-    setActiveIndex(index);
-    // Scroll to the selected project card
-  };
-
-  // CSS for hiding the scrollbar
-  const scrollbarStyle = `
-    ::-webkit-scrollbar {
-      display: none; /* Remove scrollbar for Chrome/Safari/Edge */
-    }
-  `;
-
-  const dotStyle = {
-    width: "10px",
-    height: "10px",
-    borderRadius: "50%",
-    margin: "0 5px",
-    cursor: "pointer",
-    backgroundColor: "gray", // Default dot color
-    transition: "background-color 0.3s ease",
-  };
-
-  const activeDotStyle = {
-    backgroundColor: "blue", // Active dot color
-  };
-
   // Define animation variants
   const projectCardVariants = {
     hidden: {
@@ -170,48 +145,40 @@ function ProjectCard() {
 
   return (
     <div style={{ ...backgroundGradient, overflow: "hidden" }}>
-      {/* Apply the scrollbarStyle CSS */}
-      <style>{scrollbarStyle}</style>
       <Header />
-      <div
-        className="project-container mt-[25%] md:mt-[10%] text-white "
-        style={projectContainer}
-      >
+      <div className="text-white mt-[25%] md:mt-[5%] grid grid-cols-1 md:grid-cols-4 py-2">
         {projects.map((project, index) => (
-         <motion.div
-         // Wrap the image with a motion.div for animations
-         whileHover={isMobile ? undefined : "hover"} // Apply the hover animation conditionally
-         variants={imageVariants}
-       >
-          <motion.div
-            key={index}
-            className="project-card cursor-pointer"
-            style={projectCard}
-            initial="hidden"
-            animate="visible"
-            variants={projectCardVariants}
-          >
-           <a href={project.link} target="_blank">
-           <div className="w-[300px]">
-              <img src={project.image} alt={project.name} />
-              <div className="p-4">
-                <h3 className="font-bold" style={fontFamily}>
+          <div key={index} className="py-4">
+            <div className="w-[300px] md:w-[400px] m-auto bg-[#131313] rounded-[30px]">
+              <img src={project.image} alt="" />
+              <div className="px-8 py-6">
+                <p style={fontFamily} className="text-xl">
                   {project.name}
-                </h3>
-                <p className="font-thin text-sm">{project.description}</p>
-                <div className="flex gap-2 mt-4">
-                  <img src={project.vite} className="w-5" alt="" />
-                  <img src={project.react} className="w-5" alt="" />
+                </p>
+                <p className="text-sm text-[#989898]">{project.description}</p>
+                <div className="flex items-center mt-4 gap-2">
+                  <img className="w-6" src={project.vite} alt="" />
+                  <img className="w-6" src={project.react} alt="" />
+                  <img
+                    className="w-6 rounded-full"
+                    src={project.tailwind}
+                    alt=""
+                  />
+                 <a href={project.link} target="_blank">
+                 <button className="text-white text-xs px-6 py-2 rounded bg-[#303030] font-bold shadow-lg md:w-fit">
+                    View site
+                  </button>
+                 </a>
                 </div>
-                {/* <img src={project.stack[1]} alt="" /> */}
+                {/* <div>
+            <p>{project.libraries}</p>
+           </div> */}
               </div>
             </div>
-           </a>
-            </motion.div>
-          </motion.div>
+          </div>
         ))}
       </div>
-      <ScrollDots activeIndex={activeIndex} onClickDot={handleDotClick} />
+
       <section className="flex md:flex-col gap-5 mt-[5%] md:gap-8 md:mt-[-1%] ml-10 mb-4">
         <motion.a
           href={githubLink}
@@ -242,15 +209,4 @@ function ProjectCard() {
     </div>
   );
 }
-
-const inputStyles = {
-  backgroundColor: "transparent",
-  borderBottomWidth: "0.1em",
-  padding: "0.5rem",
-  borderColor: "#d6d6d6",
-  borderRadius: 0,
-  outline: "none",
-  transition: "border-color 0.3s ease",
-};
-
 export default ProjectCard;

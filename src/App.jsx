@@ -112,9 +112,10 @@ function App() {
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 1, ease: "easeOut" }}
-    className="hover:scale-110"
+    className="hover:scale-110 flex items-center gap-2"
   >
     <img className="w-5" src={Github} alt="GitHub" />
+    {/* <button className="text-white text-xs px-6 py-2 rounded bg-[#303030] font-bold shadow-lg md:w-fit">Github</button> */}
   </motion.a>
 
   <motion.a
@@ -125,9 +126,12 @@ function App() {
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: 20 }}
     transition={{ duration: 1, ease: "easeOut" }}
-    className="hover:scale-110"
+    className="hover:scale-110 flex items-center gap-2"
   >
     <img className="w-5" src={Linkedin} alt="LinkedIn" />
+    {/* <button className="text-white text-xs px-6 py-2 rounded bg-[#303030] font-bold shadow-lg md:w-fit">
+      Connect
+      </button> */}
   </motion.a>
 </section>
 
