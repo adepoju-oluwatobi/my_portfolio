@@ -148,8 +148,12 @@ function ProjectCard() {
       <Header />
       <div className="text-white mt-[25%] md:mt-[5%] grid grid-cols-1 md:grid-cols-4 py-2">
         {projects.map((project, index) => (
-          <div key={index} className="py-4">
-            <div className="w-[300px] md:w-[400px] m-auto bg-[#131313] rounded-[30px]">
+          <motion.div
+          key={index}
+          className="py-4 mb-4"
+          whileHover={{ scale: 1.1 }} // Enlarge the card by 10% on hover
+        >
+            <div className="w-[300px] md:w-[400px] md:h-[600px] m-auto bg-[#232323] rounded-[30px]">
               <img src={project.image} alt="" />
               <div className="px-8 py-6">
                 <p style={fontFamily} className="text-xl">
@@ -175,7 +179,7 @@ function ProjectCard() {
            </div> */}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
