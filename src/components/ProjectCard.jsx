@@ -186,7 +186,7 @@ function ProjectCard() {
                 <p style={fontFamily} className="text-xl">
                   {project.name}
                 </p>
-                <p className="text-sm text-[#989898]">{project.description}</p>
+                <p className="text-xs md:text-sm text-[#989898]">{project.description}</p>
                 <div className="flex items-center mt-4 gap-2">
                   <img className="w-6" src={project.vite} alt="" />
                   <img className="w-6" src={project.react} alt="" />
