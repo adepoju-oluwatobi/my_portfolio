@@ -161,7 +161,7 @@ function ProjectCard() {
     <div style={{ ...backgroundGradient, overflow: "hidden" }}>
       <Header />
       <motion.div
-  className="text-white mt-[25%] md:mt-[10%] flex flex-wrap gap-6 justify-center py-2"
+  className="text-white mt-[25%] md:mt-[10%] m-auto flex flex-wrap gap-6 justify-center py-2 px-4"
   initial="hidden"
   animate="visible"
   variants={{
@@ -181,7 +181,7 @@ function ProjectCard() {
            whileHover={{ scale: 1.1 }} // Enlarge the card by 10% on hover
          >
             <div className="w-[300px] md:h-[580px] m-auto bg-[#181818] shadow-2xl rounded-[30px]">
-              <img src={project.image} alt="" />
+              <img className="p-4" src={project.image} alt="" />
               <div className="px-8 py-6">
                 <p style={fontFamily} className="text-xl">
                   {project.name}
